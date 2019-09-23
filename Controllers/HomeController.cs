@@ -12,7 +12,11 @@ namespace VoteWebApp.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            List<Person> list = new List<Person>();
+            list.Add(new Person() { Name = "David" });
+            list.Add(new Person() { Name = "LiLei" });
+            list.Add(new Person() { Name = "HanMeiMei" });
+            return View(list);
         }
 
         public IActionResult Privacy()
