@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace VoteWebApp.Controllers
 {
-    public class CommentController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CommentController : ControllerBase
     {
-        public IActionResult Index()
+        public IEnumerable<string> Get()
         {
-            return View();
+            var comments = new string[] { "1", "2", "3" };
+            return comments;
         }
     }
 }
