@@ -10,15 +10,15 @@ namespace VoteWebApp.Common
 {
     public class DapperHelper
     {
-        public static void test()
+        public static IEnumerable<T> Query<T>(string sql)
         {
             SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
             sb.DataSource = "sqllite/test.db";
             SQLiteConnection connection = new SQLiteConnection(sb.ToString());
             connection.Open();
-            string sql = "select * from company";
-            var res = connection.Query<Company>(sql);
+            var res = connection.Query<T>(sql);
             connection.Close();
+            return res;
         }
     }
 }
