@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoteWebApp", "VoteWebApp.csproj", "{E992B709-EAE3-4081-9D1B-56E2D4270567}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoteService", "..\VoteService\VoteService.csproj", "{36842202-252E-4451-B39E-64A018639BC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E992B709-EAE3-4081-9D1B-56E2D4270567}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E992B709-EAE3-4081-9D1B-56E2D4270567}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E992B709-EAE3-4081-9D1B-56E2D4270567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36842202-252E-4451-B39E-64A018639BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36842202-252E-4451-B39E-64A018639BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36842202-252E-4451-B39E-64A018639BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36842202-252E-4451-B39E-64A018639BC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

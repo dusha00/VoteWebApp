@@ -4,14 +4,21 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using VoteWebApp.Common;
 using VoteWebApp.Models;
 
 namespace VoteWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly VoteClient _voteClient;
+        public HomeController(VoteClient voteClient)
         {
+            _voteClient = voteClient;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var res = await _voteClient.LoadData();
             List<Person> list = new List<Person>();
             list.Add(new Person() { Name = "David" });
             list.Add(new Person() { Name = "LiLei" });

@@ -30,7 +30,7 @@ namespace VoteWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddHttpClient<VoteWebApp.Common.VoteClient>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
