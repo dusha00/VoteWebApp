@@ -16,6 +16,12 @@ namespace VoteWebApp.Controllers
             list.Add(new Person() { Name = "David" });
             list.Add(new Person() { Name = "LiLei" });
             list.Add(new Person() { Name = "HanMeiMei" });
+            list.Add(new Person() { Name = "David" });
+            list.Add(new Person() { Name = "LiLei" });
+            list.Add(new Person() { Name = "HanMeiMei" });
+            list.Add(new Person() { Name = "David" });
+            list.Add(new Person() { Name = "LiLei" });
+            list.Add(new Person() { Name = "HanMeiMei" });
             return View(list);
         }
 
