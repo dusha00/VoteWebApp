@@ -18,8 +18,6 @@ namespace VoteWebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            //var res = await _voteClient.LoadData();
-            var res = DapperHelper.Query<Company>("select * from Company");
             List<Person> list = new List<Person>();
             list.Add(new Person() { Name = "David" });
             list.Add(new Person() { Name = "LiLei" });

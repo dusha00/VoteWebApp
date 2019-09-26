@@ -37,39 +37,21 @@
                 <div onclick="GoComment()">Note</div>
             </div>
         </div>
-        <div class="row" style="margin-top:10px">
-            <div class="col-xs-3">
-                <p>Description:</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <strong>Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.</strong>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <p>Speaker:</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-5">
-                <img src="~/images/timg.jpg" height="140" width="100"/>
-            </div>
-            <div class="col-xs-7">
-                <div class="row">
-                    <div class="col-xs-12">
-                        Clayton Coleman
-                    </div>
+        <form action="/Detail/Content" method="post">
+            <div class="row" style="margin-top:10px">
+                <div class="col-xs-12">
+                    <textarea class="form-control" name="Content" rows="3"></textarea>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        Architect and Engineer on Kubernetes, OpenShift, and Containers
-                    </div>
-                </div>
-                
             </div>
-        </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+
     </div>
     <script>
         $(function () {

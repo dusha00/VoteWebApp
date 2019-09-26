@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VoteWebApp.Models;
+using VoteWebApp.Repository;
 
 namespace VoteWebApp.Controllers
 {
@@ -11,10 +13,17 @@ namespace VoteWebApp.Controllers
     [ApiController]
     public class CommentController : ControllerBase
     {
-        public IEnumerable<string> Get()
+        private readonly CommentRepository _commentRepository;
+
+        public CommentController(CommentRepository commentRepository)
         {
-            var comments = new string[] { "1", "2", "3" };
-            return comments;
+            _commentRepository = commentRepository;
+        }
+
+        public IEnumerable<CommentModel> RangeQuery(DateTime SearchDate,int PageIndex,int PageSize)
+        {
+            var list = _commentRepository.RangeQuery(SearchDate, PageIndex,PageSize);
+            return list;
         }
     }
 }
