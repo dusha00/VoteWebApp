@@ -13,6 +13,12 @@
     </div>
     @foreach (var person in Model)
     {
+        <div>
+            <div></div>
+        </div>
+    }
+    @*@foreach (var person in Model)
+    {
         <div class="row" style="background-color:#121a2a;height:auto">
             <div class="col-xs-5 img" style="background-color:white;margin-top:10px;margin-bottom:10px;margin-left:10px">
                 <img src="~/images/timg.jpg" height="120" width="100" style="margin-top:10px;margin-bottom:10px;" />
@@ -36,10 +42,10 @@
                 </div>
             </div>
         </div>
-    }
+    }*@
     <script>
-    function GoToDetail() {
-        window.location = "/Detail/Index";
-    }
+        function GoToDetail() {
+            window.location = "/Detail/Index";
+        }
     </script>
 </div>
