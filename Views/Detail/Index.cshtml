@@ -1,5 +1,5 @@
 ﻿@{
-
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -8,39 +8,30 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/score.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/score.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row" style="background-color:#f47920;color:white">
-            <div class="col-xs-1 text-justify" style="padding-top:25px">
-                <i class="fa fa-arrow-left" onclick="GoBack()"></i>
 
+    <section class="aui-flexView" style="background-color:white">
+        <header class="aui-navBar aui-navBar-fixed b-line">
+            <a href="javascript:;" class="aui-navBar-item">
+                <i class="fa fa-arrow-left" onclick="GoBack()"></i>
+            </a>
+            <div class="aui-center">
+                <span class="aui-center-title">Vote Meeting</span>
             </div>
-            <div class="col-xs-offset-1 col-xs-9">
-                <h2>Cloud meeting</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-center" style="padding-top:10px">
-                <p>k8s docker devops</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <input id="input-id" type="number">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <i class="fa fa-comments-o" style="margin-left:3px"></i>
-                <div onclick="GoComment()">Note</div>
-            </div>
+        </header>
+        <div class='score'>
+            <div class='score-medal'> </div>
         </div>
         <form action="/Detail/Content" method="post">
             <div class="row" style="margin-top:10px">
                 <div class="col-xs-12">
-                    <textarea class="form-control" name="Content" rows="3"></textarea>
+                    <textarea style="width:100%" name="Content" rows="3"></textarea>
                 </div>
             </div>
             <div class="row" style="margin-top:10px">
@@ -49,26 +40,35 @@
                 </div>
             </div>
         </form>
+    </section>
 
 
-
-    </div>
     <script>
-        $(function () {
-            $("#input-id").rating({
-                min: 0,
-                max: 5,
-                step: 1,
-                size: 'xs',
-                showClear: false
-            });
-        })
+       
         function GoBack() {
             window.history.back();
         }
         function GoComment() {
             window.location = "/Comment/Index";
         }
+        jQuery(document).ready(function ($) {
+            $('.score').score();
+            $('.result button').on('click', function () {
+                var _form_ = true,
+                    scoreArr = [],
+                    eachEle = $('.score').children('[class^="score-"]');
+                eachEle.each(function (index, el) {
+                    var l = $(el).children().attr('active-level');
+                    if (!l) _form_ = false;
+                    scoreArr.push(l);
+                });
+
+                if (_form_) {
+                    var count = scoreArr.reduce(function (p, c) { return p + parseInt(c); }, 0)
+                    $('.result-score').html('综合得分：' + (count / scoreArr.length).toFixed(2));
+                }
+            })
+        });
     </script>
 </body>
 </html>
